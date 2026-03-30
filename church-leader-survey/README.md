@@ -11,6 +11,19 @@ cp env.example .env.local
 
 Edit `.env.local` with your Airtable personal access token and base ID (never commit `.env.local`).
 
+## What’s on GitHub
+
+This repo is **complete for the application**: every source file, config, and `package-lock.json` is committed. After `git clone`, you still run `npm install` locally because **large or secret files are intentionally not in Git** (standard for Node/Next):
+
+| Item | Why it isn’t in the repo |
+|------|---------------------------|
+| `node_modules/` | Huge; recreated from `package-lock.json` via `npm install` |
+| `.next/` | Build cache; recreated with `npm run build` or `npm run dev` |
+| `.env`, `.env.local` | API tokens and secrets; keep only on your machine (use `env.example` as a template) |
+| `*.tsbuildinfo`, `next-env.d.ts` | Generated TypeScript/Next artifacts |
+
+Nothing important is “missing” from GitHub—those paths are excluded so the repo stays small, safe, and fast to clone.
+
 ## Scripts
 
 | Command | Description |
