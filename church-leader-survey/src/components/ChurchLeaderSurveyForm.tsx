@@ -139,9 +139,7 @@ export function ChurchLeaderSurveyForm() {
         if (!getStr(answers, "hybridModelPerception")) return "Please share your perception of the hybrid model.";
         return null;
       }
-      case 8:
-        return null;
-      case 9: {
+      case 8: {
         if (getArr(answers, "exchangeFeatures").length < 1) return "Select at least one valuable feature.";
         if (getArr(answers, "budgetingFeatures").length < 1)
           return "Select at least one budgeting tool feature.";
@@ -150,12 +148,14 @@ export function ChurchLeaderSurveyForm() {
         if (!getStr(answers, "payrollAddonPrice")) return "Please select a payroll add-on price expectation.";
         return null;
       }
-      case 10: {
+      case 9: {
         if (!getStr(answers, "gospelToolAgreement")) return "Please answer the gospel effectiveness question.";
         if (!getStr(answers, "pilotInterestGR")) return "Please answer about the Grand Rapids pilot.";
         if (!getStr(answers, "referralKnowsSomeone")) return "Please answer the referral question.";
         return null;
       }
+      case 10:
+        return null;
       default:
         return null;
     }
@@ -313,11 +313,11 @@ export function ChurchLeaderSurveyForm() {
             {step === 5 ? <StepDiscipleship answers={answers} setStr={setStr} /> : null}
             {step === 6 ? <StepPlatform answers={answers} setStr={setStr} /> : null}
             {step === 7 ? <StepFinancial answers={answers} setStr={setStr} /> : null}
-            {step === 8 ? <StepFinalThoughts answers={answers} setStr={setStr} /> : null}
-            {step === 9 ? (
+            {step === 8 ? (
               <StepExchange answers={answers} setStr={setStr} toggleInList={toggleInList} />
             ) : null}
-            {step === 10 ? <StepGospel answers={answers} setStr={setStr} /> : null}
+            {step === 9 ? <StepGospel answers={answers} setStr={setStr} /> : null}
+            {step === 10 ? <StepFinalThoughts answers={answers} setStr={setStr} /> : null}
           </div>
 
           <div className="flex flex-col-reverse gap-2.5 border-t border-slate-200 bg-slate-50 px-4 py-3 sm:flex-row sm:justify-between sm:px-6">
@@ -1138,7 +1138,9 @@ function StepFinalThoughts({
 }) {
   return (
     <div className="space-y-6">
-      <SectionHeading kicker="Section 8" title="Final thoughts" />
+      <p className="text-base leading-relaxed text-slate-600">
+        Before you submit, here are two optional questions—we appreciate anything you&apos;d like to add.
+      </p>
       <label className="flex flex-col gap-1.5">
         <FieldLabel q={34}>
           What would be the most important factor in your decision to participate in a platform like this?
