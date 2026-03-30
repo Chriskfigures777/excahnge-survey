@@ -1,0 +1,12 @@
+---
+description: Avoid "wizard" terminology in this project; use neutral survey wording instead
+alwaysApply: true
+---
+
+# Survey wording (no "wizard")
+
+Do **not** use the word **wizard** anywhere in this project—in UI copy, comments, README, commit messages, or when describing the multi-step survey.
+
+Use instead: **survey steps**, **step-by-step flow**, **multi-step form**, or **sections**.
+
+This matches the project owner’s preference; keep language respectful and plain.
