@@ -1,0 +1,39 @@
+{
+  "name": "survey120",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "clean": "rm -rf .next",
+    "predev": "node -e \"console.log('\\n>> Starting Next.js with Turbopack (faster than webpack).\\n>> Wait until you see Ready - first compile can take 1-3 min on a slow or iCloud-synced disk.\\n>> Then open http://127.0.0.1:3000\\n')\"",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev --turbopack -H 127.0.0.1 -p 3000",
+    "dev:fresh": "npm run clean && npm run dev",
+    "dev:webpack": "NEXT_TELEMETRY_DISABLED=1 next dev --webpack -H 127.0.0.1 -p 3000",
+    "dev:poll": "NEXT_TELEMETRY_DISABLED=1 WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=true next dev --webpack -H 127.0.0.1 -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "airtable:setup": "tsx scripts/airtable-setup.ts",
+    "test:airtable-meta": "node scripts/airtable-curl-test.mjs",
+    "test:airtable-form": "tsx scripts/verify-form-airtable-mapping.ts",
+    "test:airtable-all": "npm run test:airtable-meta && npm run test:airtable-form"
+  },
+  "dependencies": {
+    "next": "16.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}

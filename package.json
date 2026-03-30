@@ -1,0 +1,11 @@
+{
+  "name": "excahnge-survey",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix church-leader-survey",
+    "dev:fresh": "npm run dev:fresh --prefix church-leader-survey",
+    "build": "npm run build --prefix church-leader-survey",
+    "start": "npm run start --prefix church-leader-survey",
+    "clean": "npm run clean --prefix church-leader-survey"
+  }
+}

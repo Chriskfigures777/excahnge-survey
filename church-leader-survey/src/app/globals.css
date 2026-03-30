@@ -1,0 +1,26 @@
+/* Font first: keeps @import order valid; loads in browser (no next/font compile-time fetch). */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 100%;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 100%;
+  }
+}
